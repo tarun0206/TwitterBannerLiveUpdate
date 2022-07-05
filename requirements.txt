@@ -1,5 +1,4 @@
 tweepy
 Pillow
 requests
-time
 shutil
