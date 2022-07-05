@@ -13,4 +13,3 @@ def update_image():
     back_im.save('Edited.jpg', quality=95)
     img1.close()
     img2.close()
-update_image()

@@ -1,11 +1,14 @@
 import requests # request img from web
 import requests
-from run import *
+from values import *
 import shutil # save img locally
 
-file_name = "pp1.jpg" #prompt user for file_name
+# file_name = "pp1.jpg" #prompt user for file_name
+headers = {
+    'Authorization': f"Bearer {token}",
+}
 
-def downloadPfp(file_name, headers):
+def downloadPfp():
     params = {
     'max_results': 1
     }
@@ -18,10 +21,10 @@ def downloadPfp(file_name, headers):
     res = requests.get(url2, stream = True)# res = requests.get(url, stream = True)
 
     if res.status_code == 200:
-        with open(file_name,'wb') as f:
+        with open('pp1.jpg','wb') as f:
             shutil.copyfileobj(res.raw, f)
-        print('Image sucessfully Downloaded: ',file_name)
+        # print('Image sucessfully Downloaded: ',file_name)
     else:
         print('Image Couldn\'t be retrieved')
 
-downloadPfp(file_name, headers)
+# downloadPfp(file_name, headers)
